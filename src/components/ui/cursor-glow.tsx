@@ -8,7 +8,6 @@ export interface CursorGlowProps {
   color?: string;
   size?: number;
   blendMode?: string;
-  lerpFactor?: number;
 }
 
 const CursorGlow: React.FC<CursorGlowProps> = ({
@@ -16,7 +15,6 @@ const CursorGlow: React.FC<CursorGlowProps> = ({
   color = "#10b981",
   size = 300,
   blendMode = "screen",
-  lerpFactor = 0.1,
 }) => {
   const [isMobile, setIsMobile] = React.useState(false);
   const cursorX = useMotionValue(-1000);

@@ -23,6 +23,12 @@ const sizeMap = {
   full: "max-w-full inset-4",
 };
 
+const variantBorderMap = {
+  default: "border-[#27272a]",
+  destructive: "border-[#ef4444]",
+  success: "border-[#22c55e]",
+};
+
 const Modal: React.FC<ModalProps> = ({
   open,
   onOpenChange,
@@ -76,7 +82,8 @@ const Modal: React.FC<ModalProps> = ({
               transition={{ duration: 0.2, ease: "easeOut" }}
               className={twMerge(
                 clsx(
-                  "relative w-full bg-[#111113] border border-[#27272a] rounded-2xl shadow-2xl",
+                  "relative w-full bg-[#111113] border rounded-2xl shadow-2xl",
+                  variantBorderMap[variant],
                   size !== "full" && sizeMap[size],
                   size === "full" && "rounded-none"
                 )

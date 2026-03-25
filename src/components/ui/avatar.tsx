@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -62,11 +63,13 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         {...props}
       >
         {src && !imageError ? (
-          <img
+          <Image
             src={src}
             alt={alt}
-            className="aspect-square h-full w-full object-cover"
+            fill
+            className="aspect-square object-cover"
             onError={() => setImageError(true)}
+            unoptimized={true}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-[#10b981] text-white font-medium">
